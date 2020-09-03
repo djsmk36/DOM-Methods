@@ -1,22 +1,24 @@
-const bodyElement = document.body
-    let buttonElement = document.createElement('button')
-    bodyElement.append(buttonElement)
-    buttonElement.append('DO NOT CLICK!!!')
+const bodyElement = document.querySelector('body')
+const mainElement = document.createElement('main')
+const buttonElement = document.createElement('button')
+const imgElement = document.createElement('img')
+const anchorElement = document.createElement('a')
 
-    buttonElement.addEventListener ("click", function() {
-        alert("I Couldnt Get The Button Removed!!!");
-      });
 
-      let mainElement = document.createElement('main')
-      bodyElement.append(mainElement)
-      mainElement.append('Click on Freddy Funko')
+bodyElement.append(buttonElement)
+buttonElement.append('Do Not Click!!!')
 
-      
-      
+bodyElement.append(mainElement)
 
-      var img = new Image();
-img.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRa0K9dn88ezidXAS0QtqLkEZIyCUoA2mV2Ekz7vaplX8LqCNLK&usqp=CAU';
-img.onclick = function() {
-    window.location.href = 'https://www.funko.com/';
-};
-document.body.appendChild(img);
+imgElement.className = 'image'
+imgElement.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRa0K9dn88ezidXAS0QtqLkEZIyCUoA2mV2Ekz7vaplX8LqCNLK&usqp=CAU'
+mainElement.append(imgElement)
+
+anchorElement.className = 'link'
+anchorElement.href = 'https://www.funko.com/'
+mainElement.append(anchorElement)
+anchorElement.append ('Click this Funko link!')
+
+buttonElement.addEventListener('click', function(){
+    mainElement.remove ()
+})
